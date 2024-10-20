@@ -26,36 +26,18 @@
  * Build the project using Maven:
   > mvn clean install
 
+## Business Logic Overview
+* Booking a Meeting:
 
-## API Endpoints
-* Book Meeting
-> Endpoint: POST /api/meetings/book
+> Check if the employee already has another meeting during the requested time slot.
+> If not, save the meeting in the database.
 
- > Book a meeting by specifying the employee, start time, end time, and meeting details.
+* Finding Free Slots:
+> Compare the schedules of two employees.
+> Find time slots where both employees are free.
+> Return available slots for a meeting of a given duration (e.g., 30 minutes).
 
- ```json
-{
-  "employeeId": 1,
-  "meetingTitle": "Project Discussion",
-  "startTime": "2024-10-21T10:00:00",
-  "endTime": "2024-10-21T11:00:00"
-}
-  ```
-* Find Free Slots Between Two Employees
-> Endpoint: GET /api/meetings/freeSlots
+*Conflict Checking:
 
-> Find free slots of a given duration between two employees' schedules.
-
-> GET /api/meetings/freeSlots?employeeId1=1&employeeId2=2&duration=30
-* Check for Meeting Conflicts
-> Endpoint: POST /api/meetings/checkConflicts
-
-> Given a new meeting, check if any of the participants have a conflict.
-
- ```json
-{
-  "employeeIds": [1, 2, 3],
-  "startTime": "2024-10-21T10:00:00",
-  "endTime": "2024-10-21T11:00:00"
-}
- ```
+> For a new meeting request, check each participant’s schedule.
+> Identify participants who have conflicting meetings.
