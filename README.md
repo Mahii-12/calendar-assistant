@@ -37,7 +37,7 @@
 > Find time slots where both employees are free.
 > Return available slots for a meeting of a given duration (e.g., 30 minutes).
 
-*Conflict Checking:
+* Conflict Checking:
 
 > For a new meeting request, check each participant’s schedule.
 > Identify participants who have conflicting meetings.
