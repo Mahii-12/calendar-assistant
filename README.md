@@ -22,7 +22,7 @@
  * Clone the repository to your local machine:
   > git clone https://github.com/Mahii-12/calendar-assistant.git
  * Navigate to the Project Directory: 
-  > cd CalendarAssistant
+  > cd calendar-assistant
  * Build the project using Maven:
   > mvn clean install
 
