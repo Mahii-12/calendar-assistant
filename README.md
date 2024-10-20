@@ -20,8 +20,42 @@
 
 ## Application Setup Instructions
  * Clone the repository to your local machine:
-  > git clone https://github.com/Mahii-12/CalendarAssistant.git
+  > git clone https://github.com/Mahii-12/calendar-assistant.git
  * Navigate to the Project Directory: 
   > cd CalendarAssistant
  * Build the project using Maven:
   > mvn clean install
+
+
+## API Endpoints
+* Book Meeting
+> Endpoint: POST /api/meetings/book
+
+ > Book a meeting by specifying the employee, start time, end time, and meeting details.
+
+ ```json
+{
+  "employeeId": 1,
+  "meetingTitle": "Project Discussion",
+  "startTime": "2024-10-21T10:00:00",
+  "endTime": "2024-10-21T11:00:00"
+}
+  ```
+* Find Free Slots Between Two Employees
+> Endpoint: GET /api/meetings/freeSlots
+
+> Find free slots of a given duration between two employees' schedules.
+
+> GET /api/meetings/freeSlots?employeeId1=1&employeeId2=2&duration=30
+* Check for Meeting Conflicts
+> Endpoint: POST /api/meetings/checkConflicts
+
+> Given a new meeting, check if any of the participants have a conflict.
+
+ ```json
+{
+  "employeeIds": [1, 2, 3],
+  "startTime": "2024-10-21T10:00:00",
+  "endTime": "2024-10-21T11:00:00"
+}
+ ```
