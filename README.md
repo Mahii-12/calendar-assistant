@@ -26,6 +26,12 @@
  * Build the project using Maven:
   > mvn clean install
 
+## Scalability and SOLID Principles:
+
+* SOLID Principles:
+> By adhering to SOLID principles, I've designed a system that is modular, maintainable, and easily extensible, laying the foundation for scalability and future enhancements.
+
+
 ## Business Logic Overview
 * Booking a Meeting:
 
